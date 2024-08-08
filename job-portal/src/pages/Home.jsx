@@ -15,7 +15,7 @@ const Home = () => {
 
   useEffect(() => {
     setIsLoading(true);
-    fetch(`${apiUrl}/all-jobs`)
+    fetch('https://job-posting-backend-92cb6cc00134.herokuapp.com/all-jobs')
       .then((res) => res.json())
       .then((data) => {
         setJobs(data);

@@ -248,7 +248,7 @@ const CreateJob = () => {
 
   const onSubmit = (data) => {
     data.skills = selectedOption;
-    fetch('/post-job', {
+    fetch('https://job-posting-backend-92cb6cc00134.herokuapp.com/post-job', {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),

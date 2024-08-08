@@ -29,7 +29,7 @@ const ResumeBuilder = () => {
     formData.append('jobDescription', jobDescription);
 
     try {
-      const response = await axios.post('/analyze-cv', formData, {
+      const response = await axios.post('https://job-posting-backend-92cb6cc00134.herokuapp.com/analyze-cv', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
