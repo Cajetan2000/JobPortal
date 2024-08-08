@@ -5,11 +5,12 @@ import { FaBriefcase } from "react-icons/fa6";
 import Swal from 'sweetalert2'
 
 const JobDetails = () => {
+  const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000';
   const { id } = useParams();
   console.log(id);
   const [job, setJob] = useState([]);
   useEffect(() => {
-    fetch(`http://localhost:5000/all-jobs/${id}`)
+    fetch(`${apiUrl}/all-jobs/${id}`)
       .then((res) => res.json())
       .then((data) => setJob(data));
   }, []);

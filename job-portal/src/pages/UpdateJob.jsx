@@ -5,6 +5,7 @@ import CreatableSelect from "react-select/creatable";
 import PageHeader from '../components/PageHeader';
 
 const UpdateJob = () => {
+    const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000';
     const { id } = useParams();
     const { companyName, jobTitle, companyLogo, minPrice, maxPrice, salaryType, jobLocation, postingDate, experienceLevel, employmentType, description, postedBy, skills } = useLoaderData();
 
@@ -24,7 +25,7 @@ const UpdateJob = () => {
     data.skills = selectedOption;
     // console.log(data)
      // update the book object
-     fetch(`http://localhost:5000/update-job/${id}`, {
+     fetch(`${apiUrl}/update-job/${id}`, {
       method: "PATCH",
 
       headers: {

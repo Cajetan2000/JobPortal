@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../context/AuthProvider";
 
 const MyJobs = () => {
+  const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000';
   const { user } = useContext(AuthContext);
   const [jobs, setJobs] = useState([]);
   const [searchText, setSearchText] = useState("");
@@ -15,7 +16,7 @@ const MyJobs = () => {
   // console.log(control)
   useEffect(() => {
     setIsLoading(true);
-    fetch(`http://localhost:5000/myJobs/${user?.email}`)
+    fetch(`${apiUrl}/myJobs/${user?.email}`)
       .then((res) => res.json())
       .then((data) => {
         // console.log(data);
@@ -50,7 +51,7 @@ const MyJobs = () => {
 // delete a books
 const handleDelete = (id) => {
   // console.log(id)
-  fetch(`http://localhost:5000/job/${id}`, {
+  fetch(`${apiUrl}/job/${id}`, {
     method: "DELETE",
   })
     .then((res) => res.json())

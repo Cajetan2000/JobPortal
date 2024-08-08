@@ -6,6 +6,9 @@ import './ResumeBuilder.css';
 
 Modal.setAppElement('#root');
 
+
+
+
 const ResumeBuilder = () => {
   const [cvFile, setCvFile] = useState(null);
   const [jobDescription, setJobDescription] = useState('');
@@ -14,6 +17,7 @@ const ResumeBuilder = () => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [scoreModalIsOpen, setScoreModalIsOpen] = useState(false);
   const [pdfPath, setPdfPath] = useState('');
+  const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000';
 
   const handleFileChange = (e) => {
     setCvFile(e.target.files[0]);
@@ -25,7 +29,7 @@ const ResumeBuilder = () => {
     formData.append('jobDescription', jobDescription);
 
     try {
-      const response = await axios.post('http://localhost:5000/analyze-cv', formData, {
+      const response = await axios.post(`${apiUrl}/analyze-cv`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
@@ -105,7 +109,7 @@ const ResumeBuilder = () => {
           <pre className="improvement-areas">{improvementAreas}</pre>
         </div>
         <div className="modal-footer">
-          <button className="btn" onClick={() => window.open('http://localhost:5000/download-report')}>Download Report</button>
+          <button className="btn" onClick={() => window.open(`${apiUrl}/download-report`)}>Download Report</button>
           <button className="btn" onClick={() => speak(`Score: ${generatedScore}. Improvement Areas: ${improvementAreas}`)}>Read Aloud</button>
           <button className="btn" onClick={stopSpeaking}>Stop</button>
           <button className="btn" onClick={() => setScoreModalIsOpen(false)}>Close</button>

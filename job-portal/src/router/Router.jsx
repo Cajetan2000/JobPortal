@@ -10,7 +10,8 @@ import UpdateJob from '../pages/UpdateJob';
 import JobDetails from '../pages/JobDetails';
 import Login from '../pages/Login';
 import PrivateRoute from '../PrivateRoute/PrivateRoute';
-
+  
+const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000';
   const router = createBrowserRouter([
     {
       path: "/",
@@ -35,7 +36,7 @@ import PrivateRoute from '../PrivateRoute/PrivateRoute';
         {
           path: "edit-job/:id",
           element: <UpdateJob/>,
-          loader: ({params}) => fetch(`http://localhost:5000/all-jobs/${params.id}`)
+          loader: ({params}) => fetch(`${apiUrl}/all-jobs/${params.id}`)
         },
         {
           path:"/jobs/:id",
