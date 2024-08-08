@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../context/AuthProvider";
 
 const MyJobs = () => {
-  const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000';
+  const apiUrl = process.env.NEXT_PUBLIC_API_URL;
   const { user } = useContext(AuthContext);
   const [jobs, setJobs] = useState([]);
   const [searchText, setSearchText] = useState("");

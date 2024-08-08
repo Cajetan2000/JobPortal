@@ -5,7 +5,7 @@ import CreatableSelect from "react-select/creatable";
 import PageHeader from '../components/PageHeader';
 
 const UpdateJob = () => {
-    const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000';
+    const apiUrl = process.env.NEXT_PUBLIC_API_URL;
     const { id } = useParams();
     const { companyName, jobTitle, companyLogo, minPrice, maxPrice, salaryType, jobLocation, postingDate, experienceLevel, employmentType, description, postedBy, skills } = useLoaderData();
 

@@ -17,7 +17,7 @@ const ResumeBuilder = () => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [scoreModalIsOpen, setScoreModalIsOpen] = useState(false);
   const [pdfPath, setPdfPath] = useState('');
-  const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000';
+  const apiUrl = process.env.NEXT_PUBLIC_API_URL;
 
   const handleFileChange = (e) => {
     setCvFile(e.target.files[0]);
