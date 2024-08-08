@@ -29,7 +29,7 @@ const ResumeBuilder = () => {
     formData.append('jobDescription', jobDescription);
 
     try {
-      const response = await axios.post(`${apiUrl}/analyze-cv`, formData, {
+      const response = await axios.post('/analyze-cv', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
