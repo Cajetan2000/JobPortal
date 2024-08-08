@@ -25,7 +25,7 @@ const UpdateJob = () => {
     data.skills = selectedOption;
     // console.log(data)
      // update the book object
-     fetch(`${apiUrl}/update-job/${id}`, {
+     fetch(`https://job-posting-backend-92cb6cc00134.herokuapp.com/update-job/${id}`, {
       method: "PATCH",
 
       headers: {

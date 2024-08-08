@@ -10,7 +10,7 @@ const JobDetails = () => {
   console.log(id);
   const [job, setJob] = useState([]);
   useEffect(() => {
-    fetch(`${apiUrl}/all-jobs/${id}`)
+    fetch(`https://job-posting-backend-92cb6cc00134.herokuapp.com/all-jobs/${id}`)
       .then((res) => res.json())
       .then((data) => setJob(data));
   }, []);
