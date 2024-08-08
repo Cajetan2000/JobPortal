@@ -53,7 +53,7 @@ const Navbar = () => {
           <span>JobPortal</span>
         </a> */}
         <a href="/" className="flex items-center gap-2 text-2xl">
-          <img src="../public/images/As.jpeg" alt="JobPortal Logo" className="w-16 h-16" />
+          <img src="../assets/As.jpeg" alt="JobPortal Logo" className="w-16 h-16" />
           <span>CampusGig</span>
         </a>
 
