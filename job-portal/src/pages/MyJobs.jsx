@@ -16,7 +16,7 @@ const MyJobs = () => {
   // console.log(control)
   useEffect(() => {
     setIsLoading(true);
-    fetch('https://job-posting-backend-92cb6cc00134.herokuapp.com/myJobs/${user?.email}')
+    fetch(`https://job-posting-backend-92cb6cc00134.herokuapp.com/myJobs/${user?.email}`)
       .then((res) => res.json())
       .then((data) => {
         // console.log(data);
