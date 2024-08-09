@@ -109,7 +109,7 @@ const ResumeBuilder = () => {
           <pre className="improvement-areas">{improvementAreas}</pre>
         </div>
         <div className="modal-footer">
-          <button className="btn" onClick={() => window.open(`${apiUrl}/download-report`)}>Download Report</button>
+          <button className="btn" onClick={() => window.open('https://job-posting-backend-92cb6cc00134.herokuapp.com/download-report')}>Download Report</button>
           <button className="btn" onClick={() => speak(`Score: ${generatedScore}. Improvement Areas: ${improvementAreas}`)}>Read Aloud</button>
           <button className="btn" onClick={stopSpeaking}>Stop</button>
           <button className="btn" onClick={() => setScoreModalIsOpen(false)}>Close</button>
